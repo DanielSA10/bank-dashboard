@@ -9,6 +9,51 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="wrapper">
+        <div class="main">
+            <div class="mainContainer">
+                <div class="leftContent">
+                    <p class="mainAccText">Active Account</p>
+                    <div class="leftCardInfo">
+                        <p class="LeftCardInfoName">Daniel Andersen</p>
+                        <p class="LeftCardInfoNumber">**** **** **** 5689</p>
+                    </div>
+                </div>
+                <div class="rightContent">
+                    <div class="rightCardInfo">
+                        <p class="mainAccText">Available Balance</p>
+                        <p class="mainAccSpan">$ <span>68.756,43</span></p>
+                        <button class="transferBtn">Transfer Money</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cardAccount">
+                <button class="openModal">Open</button>
+    <dialog class="modal" method="dialog">
+        <form>
+
+            <label>Your name <input type="text" placeholder="Name" class="inputName"></label>
+            <label>Card Number <input type="number" placeholder="card number" class="inputNumber"></label>
+            <label>Card Date <input type="datetime" placeholder="date" class="inputDate"></label>
+
+            <button class="formSubmit" type="submit">Submit</button>
+        </form>
+    </dialog>
+
+    <div class="output"></div>
+        </div>
+        
+        
+        <div class="transactionsMenu">
+            <div class="transContainer" >
+                <div class="transTitle" >
+                    <p>Latest Transactions</p>
+                </div>
+            </div>
+            <botton class="transBtn">Make transaction</botton>
+        </div>
+    </div>
 </body>
 </html>
