@@ -8,18 +8,17 @@
 
 }
 body {
+    background-color: #ddd;
 }
 
 .wrapper {
-    background-color: #ddd;
     width:100vw;
-    height:100vh;
     padding: 2rem;
 }
 
 .main {
     background-color: #fff;
-    max-width: 800px;
+    max-width: 1000px;
     padding: 1rem;
     border: none;
     border-radius: 15px;
@@ -170,7 +169,7 @@ label {
 
 .transactionsMenu {
     background-color: #fff;
-    max-width: 800px;
+    max-width: 1000px;
     padding: 2rem;
     border: none;
     border-radius: 15px;
@@ -189,4 +188,17 @@ label {
     padding: .8rem 1.5rem;
     color: #fff;
     cursor: pointer;
+}
+
+.transInfo {
+    padding-top: 50px;
+    opacity: 70%;
+    font-size: .7rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.transInfoBorder {
+    border-left: 1px solid grey;
+    padding-left: 10px;
 }
