@@ -30,19 +30,20 @@
         </div>
 
         <div class="cardAccount">
-                <button class="openModal">Open</button>
-    <dialog class="modal" method="dialog">
-        <form>
+            <button class="openModal">Open</button>
+        <dialog class="modal" method="dialog">
+            <form>
 
-            <label>Your name <input type="text" placeholder="Name" class="inputName"></label>
-            <label>Card Number <input type="number" placeholder="card number" class="inputNumber"></label>
-            <label>Card Date <input type="datetime" placeholder="date" class="inputDate"></label>
+                <label>Your name<input type="text" placeholder="Name" class="inputName"></label>
+                <label>Card Number<input type="number" placeholder="card number" class="inputNumber"></label>
+                <label>Card Date<input type="datetime" placeholder="date" class="inputDate"></label>
+                <label>Balance<input type="number" placeholder="Specify Amount" class="inputBalance"></label>
 
-            <button class="formSubmit" type="submit">Submit</button>
-        </form>
-    </dialog>
+                <button class="formSubmit" type="submit">Submit</button>
+            </form>
+        </dialog>
 
-    <div class="output"></div>
+        <div class="output"></div>
         </div>
         
         
@@ -52,14 +53,27 @@
                     <p>Latest Transactions</p>
                 </div>
             </div>
-            <botton class="transBtn">Make transaction</botton>
+
+            <button class="transBtn">Make transaction</button>
+            <dialog class="transModal" method="dialog">
+                <form>
+    
+                    <label>Description<input type="text" placeholder="Name" class="inputTransType"></label>
+                    <label>Payment or Transfer <input type="text" placeholder="Specify type of transaction..." class="inputPayOrTrans"></label>
+                    <label>Amount <input type="number" placeholder="Specify Amount.." class="inputTransNumber"></label>
+    
+                    <button class="formTransSubmit" type="submit">Submit</button>
+                </form>
+            </dialog>
         
             <div class="transInfo">
                 <p>Date</p>
-                <p class="transInfoBorder">Type</p>
+                <p class="transInfoBorder">Description</p>
                 <p class="transInfoBorder">Payment/Transfer</p>
                 <p class="transInfoBorder">Amount</p>
             </div>
+
+            <div class="transOutput"></div>
         </div>
     </div>
 </body>
