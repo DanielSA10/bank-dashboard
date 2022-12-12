@@ -22,6 +22,7 @@ btnClose.addEventListener('click', (e) => {
         console.log(inputName.value)
         console.log(number.value)
         console.log(date.value)
+
     
         //ListWrapper
     
@@ -66,7 +67,7 @@ btnClose.addEventListener('click', (e) => {
         dateText.innerText = date.value
         list.append(dateText)
         let BalanceText = document.createElement('p')
-        BalanceText.innerText = balance.value
+        BalanceText.innerText = balance.value + "$"
         list.append(BalanceText)
     
         //deleteBtn
@@ -101,21 +102,34 @@ let formTransSubmit = document.querySelector('.formTransSubmit')
 transBtn.addEventListener('click', () => {
     transModal.showModal()
 })
-formTransSubmit.addEventListener('click', e => {
+formTransSubmit.addEventListener('click', (e, value) => {
     let inputTransType = document.querySelector('.inputTransType')
     let inputPayOrTrans = document.querySelector('.inputPayOrTrans')
     let inputTransNumber = document.querySelector('.inputTransNumber')
+    let onScreenBalanceValue = document.querySelector('.balanceValue')
     e.preventDefault()
     transModal.close()
-    console.log(inputTransType.value)
-    console.log(inputPayOrTrans.value)
+    // console.log(inputTransType.value)
+    // console.log(inputPayOrTrans.value)
+
+    //Handle withdraw and deposit function
     if(inputPayOrTrans.value === "Payment") {
         console.log("-" + inputTransNumber.value + "$")
+        //Withdraw "function"
+        value = inputTransNumber.value;
+        const balanceValue = Number(onScreenBalanceValue.innerText) - Number(value)
+        onScreenBalanceValue.innerText = balanceValue
     } else {
         console.log(inputTransNumber.value + "$")
+        //deposit "function"
+        value = inputTransNumber.value;
+        const balanceValue = Number(onScreenBalanceValue.innerText) + Number(value)
+        onScreenBalanceValue.innerText = balanceValue
     }
     
-    
+
+
+
     //append
     let transOutput = document.querySelector('.transOutput')
     
