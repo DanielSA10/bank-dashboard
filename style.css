@@ -44,8 +44,11 @@ body {
 }
 
 
-.LeftCardInfoNumber {
+.LeftCardInfoNumber, .activeCardDate {
     opacity: 70%;
+}
+.activeCardDate {
+    font-size: .8rem;
 }
 
 .rightCardInfo span {
@@ -100,7 +103,7 @@ body {
     cursor: pointer;
 }
 
-.modal {
+.modal, .rightContentModal {
     border: none;
     max-width: 100ch;
     padding: 2rem;

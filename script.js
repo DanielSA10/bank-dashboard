@@ -9,6 +9,30 @@ let balance = document.querySelector('.inputBalance')
 
 let output = document.querySelector('.output') 
 
+let onScreenBalanceValue = document.querySelectorAll('.balanceValue')
+
+
+//topRightContent modal
+let transferBtn = document.querySelector('.transferBtn')
+let rightContentModal = document.querySelector('.rightContentModal')
+
+transferBtn.addEventListener('click', () => {
+    rightContentModal.showModal();
+})
+let rightContentFormSubmit = document.querySelector('.rightContentFormSubmit')
+let rightContentBalance = document.querySelector('.rightContentBalance')
+let rightContentInputBalance = document.querySelector('.rightContentInputBalance')
+
+rightContentFormSubmit.addEventListener('click', e => {
+    e.preventDefault();
+    rightContentModal.close();
+    
+    value = rightContentInputBalance.value;
+    const rightContentBalanceValue = Number(rightContentBalance.innerText) + Number(value)
+    rightContentBalance.innerText = rightContentBalanceValue
+    console.log(parseInt(rightContentBalanceValue))
+})
+
 btnOpen.addEventListener('click', () => {
     modal.showModal()
 })
@@ -18,26 +42,26 @@ btnClose.addEventListener('click', (e) => {
         alert('no more than 4 cards')
     } else {
         e.preventDefault()
-
+        
         console.log(inputName.value)
         console.log(number.value)
         console.log(date.value)
-
-    
+        
+        
         //ListWrapper
-    
+        
         let listWrapper = document.createElement('div')
         listWrapper.classList.add('listWrapper')
-    
+        
         //List
-    
+        
         let listInfo = document.createElement('div')
         listInfo.classList.add('listInfo')
-    
+        
         let infoName = document.createElement('p')
         infoName.innerText = "Name: "
         listInfo.append(infoName)
-    
+        
         let infoNumber = document.createElement('p')
         infoNumber.innerText = "Number: "
         listInfo.append(infoNumber)
@@ -45,37 +69,37 @@ btnClose.addEventListener('click', (e) => {
         let infoDate = document.createElement('p')
         infoDate.innerText = "Date: "
         listInfo.append(infoDate)
-
+        
         let infoBalance = document.createElement('p')
         infoBalance.innerText = "Balance: "
         listInfo.append(infoBalance)
-    
+        
         //ListInfo
-    
+        
         let list = document.createElement('div')
         list.classList.add('list')
-    
+        
         let nameText = document.createElement('p')
         nameText.innerText = inputName.value
         list.append(nameText)
-    
+        
         let numberText = document.createElement('p')
         numberText.innerText = number.value
         list.append(numberText)
-    
+        
         let dateText = document.createElement('p')
         dateText.innerText = date.value
         list.append(dateText)
         let BalanceText = document.createElement('p')
         BalanceText.innerText = balance.value + "$"
         list.append(BalanceText)
-    
+        
         //deleteBtn
-    
+        
         let deleteBtn = document.createElement('button')
         deleteBtn.innerText = "X"
         deleteBtn.classList.add('deleteBtn')
-    
+        
         deleteBtn.addEventListener('click', e => {
             let target = e.target;
             target.parentElement.remove()
@@ -85,8 +109,8 @@ btnClose.addEventListener('click', (e) => {
         listWrapper.appendChild(listInfo)
         listWrapper.appendChild(list)
         listWrapper.appendChild(deleteBtn)
-    
-    
+        
+        
         modal.close()
         console.log(output.children.length)
     }
@@ -106,7 +130,6 @@ formTransSubmit.addEventListener('click', (e, value) => {
     let inputTransType = document.querySelector('.inputTransType')
     let inputPayOrTrans = document.querySelector('.inputPayOrTrans')
     let inputTransNumber = document.querySelector('.inputTransNumber')
-    let onScreenBalanceValue = document.querySelectorAll('.balanceValue')
     e.preventDefault()
     transModal.close()
     // console.log(inputTransType.value)
@@ -120,12 +143,16 @@ formTransSubmit.addEventListener('click', (e, value) => {
             value = inputTransNumber.value;
             const balanceValue = Number(amountOfBalance.innerText) - Number(value)
             amountOfBalance.innerText = balanceValue
-        } else {
+        } 
+        else if(inputPayOrTrans.value === "Transfer"){
             console.log(inputTransNumber.value + "$")
             //deposit "function"
             value = inputTransNumber.value;
             const balanceValue = Number(amountOfBalance.innerText) + Number(value)
             amountOfBalance.innerText = balanceValue
+        } else {
+            //Bug: items still get appended to page
+            return;
         }
     })
 
