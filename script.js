@@ -106,26 +106,29 @@ formTransSubmit.addEventListener('click', (e, value) => {
     let inputTransType = document.querySelector('.inputTransType')
     let inputPayOrTrans = document.querySelector('.inputPayOrTrans')
     let inputTransNumber = document.querySelector('.inputTransNumber')
-    let onScreenBalanceValue = document.querySelector('.balanceValue')
+    let onScreenBalanceValue = document.querySelectorAll('.balanceValue')
     e.preventDefault()
     transModal.close()
     // console.log(inputTransType.value)
     // console.log(inputPayOrTrans.value)
 
     //Handle withdraw and deposit function
-    if(inputPayOrTrans.value === "Payment") {
-        console.log("-" + inputTransNumber.value + "$")
-        //Withdraw "function"
-        value = inputTransNumber.value;
-        const balanceValue = Number(onScreenBalanceValue.innerText) - Number(value)
-        onScreenBalanceValue.innerText = balanceValue
-    } else {
-        console.log(inputTransNumber.value + "$")
-        //deposit "function"
-        value = inputTransNumber.value;
-        const balanceValue = Number(onScreenBalanceValue.innerText) + Number(value)
-        onScreenBalanceValue.innerText = balanceValue
-    }
+    onScreenBalanceValue.forEach(amountOfBalance => {
+        if(inputPayOrTrans.value === "Payment") {
+            console.log("-" + inputTransNumber.value + "$")
+            //Withdraw "function"
+            value = inputTransNumber.value;
+            const balanceValue = Number(amountOfBalance.innerText) - Number(value)
+            amountOfBalance.innerText = balanceValue
+        } else {
+            console.log(inputTransNumber.value + "$")
+            //deposit "function"
+            value = inputTransNumber.value;
+            const balanceValue = Number(amountOfBalance.innerText) + Number(value)
+            amountOfBalance.innerText = balanceValue
+        }
+    })
+
     
 
 
