@@ -212,6 +212,3 @@ formTransSubmit.addEventListener('click', (e, value) => {
 
     transOutput.appendChild(transOutputWrapper)
 })
-
-
-

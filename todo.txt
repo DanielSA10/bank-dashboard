@@ -1,0 +1,5 @@
+> Make Available Balance chance color based on if it's more than or less than zero
+
+> Add text that displays the current amount of cards onto the page 
+
+> Fix the styling on the Latest Transactions panel 
