@@ -10,6 +10,7 @@ let balance = document.querySelector('.inputBalance')
 let output = document.querySelector('.output') 
 
 let onScreenBalanceValue = document.querySelectorAll('.balanceValue')
+let cardBalanceValue = document.querySelector('.cardBalanceValue')
 
 //topRightContent modal
 let transferBtn = document.querySelector('.transferBtn')
@@ -29,6 +30,7 @@ rightContentFormSubmit.addEventListener('click', e => {
     value = rightContentInputBalance.value;
     const rightContentBalanceValue = Number(rightContentBalance.innerText) + Number(value)
     rightContentBalance.innerText = rightContentBalanceValue
+    cardBalanceValue.innerText = rightContentBalanceValue
     console.log(parseInt(rightContentBalanceValue))
 })
 
@@ -147,6 +149,7 @@ formTransSubmit.addEventListener('click', (e, value) => {
             value = inputTransNumber.value;
             const balanceValue = Number(amountOfBalance.innerText) - Number(value)
             amountOfBalance.innerText = balanceValue
+            cardBalanceValue.innerText = balanceValue
         } 
         else if(inputPayOrTrans.value === "Transfer"){
             console.log(inputTransNumber.value + "$")
@@ -154,6 +157,7 @@ formTransSubmit.addEventListener('click', (e, value) => {
             value = inputTransNumber.value;
             const balanceValue = Number(amountOfBalance.innerText) + Number(value)
             amountOfBalance.innerText = balanceValue
+            cardBalanceValue.innerText = balanceValue
         } else {
             //Bug: items still get appended to page
             return;
