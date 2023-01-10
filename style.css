@@ -43,6 +43,22 @@ body {
     padding: 3rem 0rem 0rem 0rem;
 }
 
+.DisplayCardAmount {
+    display: flex;
+    flex-direction: row;
+    font-size: .9rem;
+    margin-top: 10px;
+    opacity: 70%;
+}
+
+.currentCardAmount, .currentCardAmountTop {
+    font-size: .9rem;
+}
+
+.currentCardAmount {
+    margin-left: 5px;
+}
+
 
 .LeftCardInfoNumber, .activeCardDate {
     opacity: 70%;
@@ -50,6 +66,7 @@ body {
 .activeCardDate {
     font-size: .8rem;
 }
+
 
 .rightCardInfo span {
     font-weight: 600;
@@ -148,6 +165,7 @@ label {
 
 .listInfo {
     padding: 0px 10px;
+    font-size: clamp(.9rem, .9vw, 1rem); 
 }
 .listInfo p {
     padding: 10px 0px;
@@ -157,13 +175,21 @@ label {
 }
 .list p {
     padding: 10px 0px;
+    font-size: clamp(.9rem, .9vw, 1rem); 
 }
 
 .output {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap:10px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 }
+@media (max-width:1858px) {
+    .output {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 10px;
+    }
+}
+
 
 
 
@@ -193,6 +219,8 @@ label {
     cursor: pointer;
 }
 
+
+
 .transInfo {
     padding-top: 50px;
     padding: 50px 0px 15px 0px;
@@ -200,6 +228,7 @@ label {
     font-size: .7rem;
     display: flex;
     justify-content: space-around;
+
 }
 
 .transInfoBorder {
@@ -225,11 +254,15 @@ label {
 }
 .outputWrapper {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     font-size: .9rem;
     border-bottom: 1px solid rgb(223, 223, 223);
 }
 
 .transTypeStyling {
     padding: 10px 0px;
+}
+
+.transTypeStyling p {
+
 }

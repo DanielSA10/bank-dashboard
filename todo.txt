@@ -1,5 +1,19 @@
-> Make Available Balance chance color based on if it's more than or less than zero
+NEEDS FIXING:
+
+> Make Available Balance change color based on if it's more than, or less than zero
+
+> Fix the styling on the Latest Transactions panel 
+
+> Make it so you can't add a card unless all the values are defined
+
+> Fix the bug where the 3 most recent cards get deleted if user tries to add a fifth card
+
+
+
+FIXED:
+
+> Fix the payment/transfer options in the transactions modal
 
 > Add text that displays the current amount of cards onto the page 
 
-> Fix the styling on the Latest Transactions panel 
+> The Registered Cards counter needs to go down if user deletes card

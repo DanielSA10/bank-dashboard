@@ -11,7 +11,6 @@ let output = document.querySelector('.output')
 
 let onScreenBalanceValue = document.querySelectorAll('.balanceValue')
 
-
 //topRightContent modal
 let transferBtn = document.querySelector('.transferBtn')
 let rightContentModal = document.querySelector('.rightContentModal')
@@ -100,10 +99,6 @@ btnClose.addEventListener('click', (e) => {
         deleteBtn.innerText = "X"
         deleteBtn.classList.add('deleteBtn')
         
-        deleteBtn.addEventListener('click', e => {
-            let target = e.target;
-            target.parentElement.remove()
-        })
         
         output.appendChild(listWrapper)
         listWrapper.appendChild(listInfo)
@@ -112,7 +107,16 @@ btnClose.addEventListener('click', (e) => {
         
         
         modal.close()
+        
+        let currentCardAmount = document.querySelector('.currentCardAmount')
+        currentCardAmount.innerText = output.children.length
         console.log(output.children.length)
+
+        deleteBtn.addEventListener('click', e => {
+            let target = e.target;
+            target.parentElement.remove()
+            currentCardAmount.innerText = output.children.length + 1 - 1
+        })
     }
 })
 
